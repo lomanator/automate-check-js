@@ -52,7 +52,7 @@ myFile.onchange = function(){
 
     encontradosMarcados = "";
     if (encontrados.size > 0)
-      encontradosMarcados = "\nAs NDs encontradas foram marcadas!\n";
+      encontradosMarcados = "\nAs NDs encontradas vão ser marcadas!\n";
 
     listaNaoEncontrados = "";
     if (naoEncontrados.size > 0)
