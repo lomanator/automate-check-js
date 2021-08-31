@@ -78,7 +78,7 @@ myFile.onchange = function(){
     link.setAttribute("download", "relatorio_" + newdate + ".csv");
     document.body.appendChild(link);
 
-    alert('Relatório gerado com ' + encontrados + ' items encontrados. Salvando...')
+    alert('Relatório gerado com ' + encontrados + ' items encontrados. Pressione OK para salvar.')
     link.click();
   };
   reader.readAsText(file);
