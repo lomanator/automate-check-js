@@ -58,7 +58,7 @@ myFile.onchange = function(){
     var encodedUri = encodeURI(csvContent);
     var link = document.createElement("a");
     link.setAttribute("href", encodedUri);
-    link.setAttribute("download", "NDS_bloqueadas_" + newdate + ".csv");
+    link.setAttribute("download", "relatorio_" + newdate + ".csv");
     document.body.appendChild(link);
 
     alert('Relatório gerado com ' + rowsArray.length + ' items encontrados. Salvando...')
