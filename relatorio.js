@@ -27,6 +27,7 @@ myFile.onchange = function(){
 
     var rowsArray = [ headerArray ];
     var cellArray = []
+    var encontrados = 0;
 
     var i = 0;
     var firstValue = ''
@@ -46,15 +47,17 @@ myFile.onchange = function(){
           }
           else
             break;
-
         }
 
         if (isMatch) {
-          cellArray = [];
-          for (j = 0; j< rowsHTML[i].cells.length; j++)
-            cellArray.push(rowsHTML[i].cells[j].innerText);
-          cellArray.push(resultTexts.join(', '));
-          rowsArray.push(cellArray);
+          encontrados++;
+          for (k=0; k<resultTexts.length; k++) {
+            cellArray = [];
+            for (j = 0; j< rowsHTML[i].cells.length; j++)
+              cellArray.push(rowsHTML[i].cells[j].innerText);
+            cellArray.push(resultTexts[k]);
+            rowsArray.push(cellArray);
+          }
         }
       }
       i++;
@@ -75,7 +78,6 @@ myFile.onchange = function(){
     link.setAttribute("download", "relatorio_" + newdate + ".csv");
     document.body.appendChild(link);
 
-    let encontrados = rowsArray.length - 1;
     alert('Relatório gerado com ' + encontrados + ' items encontrados. Salvando...')
     link.click();
   };
